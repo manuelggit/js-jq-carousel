@@ -1,11 +1,18 @@
 $( document ).ready(function() {
-  
 
     $(".next").click(prossimaslide);
     $(".prev").click(precedenteslide);
 
+    // cambio le immagini con la tastiera
+    $('body').keydown(function(e){
+      if(e.keyCode == 39 || e.keyCode == 32) { // con freccia a dx e space
+        prossimaslide();
+      }
+      if (e.keyCode == 37) { // con freccia a sx
+        precedenteslide();
+      }
 
-
+    });
 
     // FUNZIONI
     function prossimaslide(){
